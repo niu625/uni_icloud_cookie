@@ -1,0 +1,40 @@
+{
+	"uni-app": {
+		"scripts": {
+			"custom-online": {
+				"title": "微信服务号--线上环境",
+				"BROWSER": "chrome",
+				"env": {
+					"UNI_PLATFORM": "h5"
+				},
+				"define": {
+					"ONLINE": true
+				}
+			},
+			"custom-dev": {
+				"title": "微信服务号--开发环境",
+				"BROWSER": "chrome",
+				"env": {
+					"UNI_PLATFORM": "h5"
+				},
+				"define": {
+					"DEV": true
+				}
+			},
+			"custom-test": {
+				"title": "微信服务号--测试环境",
+				"BROWSER": "chrome",
+				"env": {
+					"UNI_PLATFORM": "h5"
+				},
+				"define": {
+					"TEST": true
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"mockjs": "^1.1.0",
+		"moment": "^2.29.1"
+	}
+}

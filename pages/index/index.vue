@@ -1,6 +1,7 @@
 <template>
 	<view class="wrap">
 		<NavBar></NavBar>
+		<TabBar :labelList="labelList"></TabBar>
 	</view>
 </template>
 
@@ -9,12 +10,21 @@
 		data() {
 			name:'首页'
 			return {
-				title:'首页'
+				title:'首页',
+				labelList:[]
 			}
 		},
+		onLoad() {
+			this._intiLabelList()
+		},
 		methods: {
-			changeMsg(value){
-				this.msg = value
+			_intiLabelList() {
+				uniCloud.callFunction({
+					name: "get_label_list",
+					success:(res)=> {
+						this.labelList = res.result.labelList
+					}
+				})
 			}
 		}
 	}
